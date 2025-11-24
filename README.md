@@ -14,7 +14,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: populate-action
-        uses: emo-bon/populate-action@master
+        uses: emo-bon/populate-action@main
       - name: git-auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v4
 ```
