@@ -1,6 +1,6 @@
 # populate-action
 
-Action to populate observatory crates with README and raw logsheets.
+Action to populate observatory crates with .gitignore, README.md and raw logsheets.
 
 To give an example, the following workflow file will download the logsheets, convert them to csv format and commit the changes if relevant.
 
