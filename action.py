@@ -9,12 +9,12 @@ from pyedm.gg import get_xlsx
 GITHUB_WORKSPACE = os.getenv("GITHUB_WORKSPACE")
 WATER_LOGSHEET_URL = os.getenv("WATER_LOGSHEET_URL")
 SEDIMENT_LOGSHEET_URL = os.getenv("SEDIMENT_LOGSHEET_URL")
-ARMS_LOGSHEET_URL = os.getenv("ARMS_LOGSHEET_URL")
+HARD_LOGSHEET_URL = os.getenv("HARD_LOGSHEET_URL")
 
 
 if __name__ == "__main__":
-    for habitat, url in {"water": WATER_LOGSHEET_URL, "sediment": SEDIMENT_LOGSHEET_URL, "arms": ARMS_LOGSHEET_URL}.items():
-        if not url.startswith("http"):  # url = NaN
+    for habitat, url in {"water": WATER_LOGSHEET_URL, "sediment": SEDIMENT_LOGSHEET_URL, "hard": HARD_LOGSHEET_URL}.items():
+        if not url.startswith("http"):  # url is undefined
             continue
 
         with tempfile.TemporaryDirectory() as tmpd:
