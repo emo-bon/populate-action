@@ -20,7 +20,7 @@ if __name__ == "__main__":
     
     # add .README
     with open("README.md", "w") as f:
-        f.write(f"{GITHUB_REPOSITORY}\n...\n")
+        f.write(f"#{GITHUB_REPOSITORY}")
 
     # add logsheets
     for habitat, url in {"water": WATER_LOGSHEET_URL, "sediment": SEDIMENT_LOGSHEET_URL, "hard": HARD_LOGSHEET_URL}.items():
