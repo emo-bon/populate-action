@@ -2,6 +2,7 @@
 import os
 import tempfile
 import pandas as pd
+import shutil
 from pathlib import Path
 from pyedm.gg import get_xlsx
 
@@ -14,8 +15,14 @@ HARD_LOGSHEET_URL = os.getenv("HARD_LOGSHEET_URL")
 
 
 if __name__ == "__main__":
-    import os
-    print(os.listdir(GITHUB_WORKSPACE))
+    # refresh github workspace
+    for entry in os.listdir(GITHUB_WORKSPACE):
+        if not entry.startswith("."):
+            entry_path = Path(GITHUB_WORKSPACE) / entry
+            if os.path.isdir(entry_path):
+                shutil.rmtree(entry_path)
+            else:
+                os.remove(entry_path)
 
     # add .gitignore
     with open(".gitignore", "w") as f:
