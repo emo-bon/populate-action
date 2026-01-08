@@ -14,6 +14,9 @@ HARD_LOGSHEET_URL = os.getenv("HARD_LOGSHEET_URL")
 
 
 if __name__ == "__main__":
+    import os
+    print(os.listdir(GITHUB_WORKSPACE))
+
     # add .gitignore
     with open(".gitignore", "w") as f:
         f.write("sema-workspace\n")
