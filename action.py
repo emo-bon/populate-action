@@ -46,4 +46,8 @@ if __name__ == "__main__":
             path_csv.mkdir(parents=True, exist_ok=True)
 
             for sheet in ("observatory", "sampling", "measured"):
-                xlsx[sheet].to_csv(path_csv / f'{habitat}_{sheet}.csv', index=False)
+                try:
+                    xlsx_sheet = xlsx[sheet]
+                except KeyError:
+                    continue
+                xlsx_sheet.to_csv(path_csv / f'{habitat}_{sheet}.csv', index=False)
