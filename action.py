@@ -47,7 +47,6 @@ if __name__ == "__main__":
 
             for sheet in ("observatory", "sampling", "measured"):
                 try:
-                    xlsx_sheet = xlsx[sheet]
+                    xlsx[sheet].to_csv(path_csv / f'{habitat}_{sheet}.csv', index=False)
                 except KeyError:
                     continue
-                xlsx_sheet.to_csv(path_csv / f'{habitat}_{sheet}.csv', index=False)
